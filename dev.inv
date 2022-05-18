@@ -1,2 +1,2 @@
 [webservers]
-18.223.112.214 
+18.223.112.214 ansible_user=deployer
