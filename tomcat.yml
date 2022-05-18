@@ -1,1 +1,9 @@
+---
+ - hosts: localhost
+   gather_facts: true
+   tasks:
+    - name: copy the war file
+        src:  /var/lib/jenkins/workspace/maven_nexus/webapp/target/webapp.war
+        dest:  /home/tomcat/webapps/
+...
 
