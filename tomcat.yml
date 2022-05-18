@@ -1,5 +1,5 @@
 ---
- - hosts: 3.17.24.68:8080
+ - hosts: 3.17.24.68
    gather_facts: true
    tasks:
     - name: deploying war file from nexus repository
