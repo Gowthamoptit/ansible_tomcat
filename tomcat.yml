@@ -2,6 +2,10 @@
  - hosts: webservers
    gather_facts: true
    tasks:
+    - name: start tomcat 
+      service:
+        name: tomcat 
+        state: "/tomcat/bin/startup.sh"
     - name: deploying war file from nexus repository
       get_url:
         url: http://52.43.6.62:8081/repository/maven-snapshots/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-20220514.121817-1.war
