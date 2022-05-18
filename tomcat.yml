@@ -1,5 +1,5 @@
 ---
- - hosts: localhost
+ - hosts: webservers
    gather_facts: true
    tasks:
     - name: deploying war file from nexus repository
