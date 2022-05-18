@@ -1,5 +1,6 @@
 ---
  - hosts: webservers
+   connection: local
    gather_facts: true
    tasks:
     - name: start tomcat 
