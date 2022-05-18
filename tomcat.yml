@@ -2,8 +2,9 @@
  - hosts: localhost
    gather_facts: true
    tasks:
-    - name: copy the war file
-        src:  /var/lib/jenkins/workspace/maven_nexus/webapp/target/webapp.war
-        dest:  /opt/tomcat/webapps/
+    - name: deploying war file from nexus repository
+      get_url:
+        url: http://52.43.6.62:8081/repository/maven-snapshots/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-20220514.121817-1.war
+        dest: /opt/tomcat/webapps
 ...
 
