@@ -2,10 +2,13 @@
  - hosts: webservers
    connection: local
    gather_facts: true
+   vars:
+    server: "http://52.43.6.62:8081/repository/maven-snapshots"
+    endpoint: "/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-20220514.121817-1.war"
    tasks:
     - name: deploying war file from nexus repository
       get_url:
-        url: http://52.43.6.62:8081/repository/maven-snapshots/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-20220514.121817-1.war
+        url: "{{ server }}{{ endpoint }}"
         dest: /opt/tomcat/webapps
 ...
 
