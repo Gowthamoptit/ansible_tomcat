@@ -9,8 +9,7 @@
     - name: deploying war file from nexus repository
       get_url:
         url: "{{ server }}{{ endpoint }}"
-        dest: /opt/tomcat/webapps/webapp
-        checksum: "SHA256:aJbtOG/lYPharp14p40fW+IwwaUGRR0HgUZkPv7PgXc deployer@3.87.75.31"
+        dest: webapp/target/*.war
 ...
 
 
