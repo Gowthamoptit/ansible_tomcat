@@ -1,2 +1,2 @@
 [webservers]
-172.31.35.174 ansible_user: ec2-user
+18.190.158.198 ansible_user: deployer
