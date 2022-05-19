@@ -10,6 +10,8 @@
       get_url:
         url: "{{ server }}{{ endpoint }}"
         dest: webapp/target/*.war
+        from_port: 8080
+        to_port: 8080
 ...
 
 
