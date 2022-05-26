@@ -4,7 +4,6 @@
   become: true
   tasks:
    - name: deploying war file 
-     deploy:
        src: "/var/lib/jenkins/workspace/maven_nexus/webapp/target/webapp.war"
        dest: /opt/tomcat/webapps/
        mode: 0777
