@@ -1,15 +1,15 @@
 ---
- - hosts: webservers
-   connection: local
-   gather_facts: true
-   vars:
-    server: "http://34.221.250.118:8081/repository/maven-snapshots"
-    endpoint: "/com/example/maven-project/webapp/1.0-SNAPSHOT/webapp-1.0-20220514.121817-1.war"
-   tasks:
-    - name: deploying war file from nexus repository
-      get_url:
-        url: "{{ server }}{{ endpoint }}"
-        dest: webapp/target/*.war
+- hosts: webservers
+  gather_facts: true
+  become: true
+  tasks:
+   - name: deploying war file 
+     deploy:
+       src: /var/lib/jenkins/workspace/maven_nexus/webapp/target/webapp.war
+       dest: /opt/tomcat/webapps/
+       mode: 0777
+       owner: root
+       group: root
 ...
 
 
